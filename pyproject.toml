@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[bumpver]
+current_version = "2024.03.06"
+version_pattern = "[v]YYYY.0M.0D[-TAG]"
+commit = false
+tag = false
+push = false
+
+[bumpver.file_patterns]
+"package.json" = [
+    '"version": "{version}"',
+]
+"package-lock.json" = [
+    '"version": "{version}"',
+]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+]

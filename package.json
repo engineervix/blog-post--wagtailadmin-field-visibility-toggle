@@ -1,0 +1,95 @@
+{
+  "name": "blog-post--wagtailadmin-field-visibility-toggle",
+  "version": "2024.03.06",
+  "description": "Conditional Display of Fields in Wagtail Admin -- an example Wagtail application to illustrate the concept",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle.git"
+  },
+  "keywords": [
+    "wagtail",
+    "django"
+  ],
+  "author": "Victor Miti",
+  "private": true,
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle/issues"
+  },
+  "homepage": "https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle#readme",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  },
+  "standard-version": {
+    "header": "# Changelog\n\nAll notable changes to this project will be documented here.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project uses ~~[Semantic Versioning](https://semver.org/spec/v2.0.0.html)~~ [Calendar Versioning](https://calver.org/).\n",
+    "types": [
+      {
+        "type": "feat",
+        "section": "🚀 Features"
+      },
+      {
+        "type": "fix",
+        "section": "🐛 Bug Fixes"
+      },
+      {
+        "type": "docs",
+        "section": "📝 Docs",
+        "hidden": false
+      },
+      {
+        "type": "style",
+        "section": "💄 Styling",
+        "hidden": false
+      },
+      {
+        "type": "refactor",
+        "hidden": false,
+        "section": "♻️ Code Refactoring"
+      },
+      {
+        "type": "perf",
+        "section": "⚡️ Performance Improvements",
+        "hidden": false
+      },
+      {
+        "type": "test",
+        "section": "✅ Tests",
+        "hidden": false
+      },
+      {
+        "type": "build",
+        "section": "⚙️ Build System",
+        "hidden": false
+      },
+      {
+        "type": "ci",
+        "section": "👷 CI/CD",
+        "hidden": false
+      },
+      {
+        "type": "chore",
+        "section": "🚧 Others",
+        "hidden": true
+      },
+      {
+        "type": "revert",
+        "section": "⏪️ Reverts",
+        "hidden": true
+      }
+    ],
+    "scripts": {
+      "prechangelog": "sed -e '1,6d' -i CHANGELOG.md",
+      "postchangelog": "sed -e 's/###\\ \\[/##\\ \\[/g' -i CHANGELOG.md && sed -re 's/##\\ \\[([0-9])/##\\ \\[\\1/g' -i CHANGELOG.md"
+    },
+    "engines": {
+      "node": ">= 20 <21",
+      "npm": ">= 10"
+    }
+  },
+  "volta": {
+    "node": "20.11.1"
+  }
+}
