@@ -1,10 +1,11 @@
 import os
 import subprocess
+from datetime import datetime
 from pathlib import Path  # noqa: F401
 
 import tomllib
 from colorama import Fore, init
-from invoke import task
+from invoke import run, task
 
 
 @task
@@ -63,11 +64,19 @@ def bump(c, branch="main", is_first_release=False, push=False):
             project = "a Wagtail project"
             if first_commit:
                 c.run(f"git checkout {first_commit}", pty=True)
-                c.run(
-                    'GIT_COMMITTER_DATE="$(git show --format=%aD | head -1)"', pty=True
+                cmd = "git show --format=%aD | head -1"
+                c.run(f'GIT_COMMITTER_DATE="$({cmd})"', pty=True)
+                result = run(cmd, hide=True, warn=True)
+                commit_date = (
+                    result.stdout.splitlines()[-1]
+                    if result.ok
+                    else "Wed, 6 Mar 2024 01:01:09 +0000"
                 )
+                formatted_commit_date = datetime.strptime(
+                    commit_date, "%a, %d %b %Y %H:%M:%S %z"
+                ).strftime("%Y.%m.%d")
                 c.run(
-                    'git tag -a 0.0.0 -m "v0.0.0 - this is where it all starts"',
+                    f'git tag -a {formatted_commit_date} -m "version {formatted_commit_date} - this is where it all starts"',
                     pty=True,
                 )
                 c.run("unset GIT_COMMITTER_DATE", pty=True)
