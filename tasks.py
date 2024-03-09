@@ -81,20 +81,20 @@ def bump(c, branch="main", is_first_release=False, push=False):
                 )
                 c.run("unset GIT_COMMITTER_DATE", pty=True)
                 c.run(f"git checkout {branch}", pty=True)
-                c.run("bumpver update", pty=True)
+                # c.run("bumpver update", pty=True)
 
-                with open("pyproject.toml", "rb") as f:
-                    toml_dict = tomllib.load(f)
-                version_files = toml_dict["bumpver"]["file_patterns"].keys()
-                files_to_add = " ".join(list(version_files))
-                c.run(
-                    f"git add {files_to_add}",
-                    pty=True,
-                )
-                c.run(
-                    f'npm run release -- --commit-all --skip.bump --tag-prefix "" --releaseCommitMessageFormat "chore: This is {project} kickstarted on {{{{currentTag}}}} 🎉"',
-                    pty=True,
-                )
+                # with open("pyproject.toml", "rb") as f:
+                #     toml_dict = tomllib.load(f)
+                # version_files = toml_dict["bumpver"]["file_patterns"].keys()
+                # files_to_add = " ".join(list(version_files))
+                # c.run(
+                #     f"git add {files_to_add}",
+                #     pty=True,
+                # )
+                # c.run(
+                #     f'npm run release -- --commit-all --skip.tag --skip.bump skip.changelog --tag-prefix "" --releaseCommitMessageFormat "chore: This is {project} kickstarted on {{{{currentTag}}}} 🎉"',
+                #     pty=True,
+                # )
                 if push:
                     # push to origin
                     c.run(f"git push --follow-tags origin {branch}", pty=True)
@@ -109,16 +109,16 @@ def bump(c, branch="main", is_first_release=False, push=False):
             previous_tag = get_current_tag.stdout.rstrip()
             c.run("bumpver update", pty=True)
 
-            with open("pyproject.toml", "rb") as f:
-                toml_dict = tomllib.load(f)
-            version_files = toml_dict["bumpver"]["file_patterns"].keys()
-            files_to_add = " ".join(list(version_files))
+            # with open("pyproject.toml", "rb") as f:
+            #     toml_dict = tomllib.load(f)
+            # version_files = toml_dict["bumpver"]["file_patterns"].keys()
+            # files_to_add = " ".join(list(version_files))
+            # c.run(
+            #     f"git add {files_to_add}",
+            #     pty=True,
+            # )
             c.run(
-                f"git add {files_to_add}",
-                pty=True,
-            )
-            c.run(
-                f'npm run release -- --commit-all --skip.bump --tag-prefix "" --releaseCommitMessageFormat "bump: ✈️ {previous_tag} → {{{{currentTag}}}}"',
+                f'npm run release -- --skip.bump --tag-prefix "" --releaseCommitMessageFormat "bump: ✈️ {previous_tag} → {{{{currentTag}}}}"',
                 pty=True,
             )
             if push:

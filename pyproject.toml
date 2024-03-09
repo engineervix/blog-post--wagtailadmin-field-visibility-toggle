@@ -5,7 +5,8 @@ build-backend = "setuptools.build_meta"
 [bumpver]
 current_version = "2024.03.06"
 version_pattern = "[v]YYYY.0M.0D[-TAG]"
-commit = false
+commit_message = "bump: ✈️ {old_version} → {new_version}"
+commit = true
 tag = false
 push = false
 
