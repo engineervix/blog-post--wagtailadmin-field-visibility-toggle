@@ -139,7 +139,7 @@ def get_release_notes(c):
     to the last line before the next Heading 2 text
     """
 
-    pattern_to_match = "## ["
+    pattern_to_match = "## 2"
 
     count = 0
     lines = []
