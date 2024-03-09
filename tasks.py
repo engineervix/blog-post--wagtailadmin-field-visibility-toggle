@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path  # noqa: F401
 
-import tomllib
+# import tomllib
 from colorama import Fore, init
 from invoke import run, task
 
@@ -61,7 +61,7 @@ def bump(c, branch="main", is_first_release=False, push=False):
     if unstaged_str not in check.stdout or uncommitted_str not in check.stdout:
         if is_first_release:
             first_commit = get_first_commit()
-            project = "a Wagtail project"
+            # project = "a Wagtail project"
             if first_commit:
                 c.run(f"git checkout {first_commit}", pty=True)
                 cmd = "git show --format=%aD | head -1"
