@@ -4,7 +4,7 @@
  *
  * This is used on the page editor for ToyPages
  */
-class ContactEmailVisibilityManager {
+class ContactEmailVisibilityHandler {
   constructor() {
     this.checkbox = document.querySelector(
       `input[type="checkbox"][name$="use_designer_email"][id$="id_use_designer_email"]`
@@ -28,11 +28,6 @@ class ContactEmailVisibilityManager {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cevm = new ContactEmailVisibilityManager();
-  cevm.initializePage();
-});
-
 /**
  * Toggles visibility of a `end_date` field's parent panel based on
  * its counterpart `end_date_is_known` checkbox's state'.
@@ -40,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * This is used on the page editor for ToyPages, specifically
  * on the **campaigns** InlinePanel.
  */
-class EndDateVisibilityManager {
+class EndDateVisibilityHandler {
   constructor() {
     this.namePrefix = '[name^="campaigns-"]';
     this.idPrefix = '[id^="id_campaigns-"]';
@@ -87,6 +82,9 @@ class EndDateVisibilityManager {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const edvm = new EndDateVisibilityManager();
+  const cevm = new ContactEmailVisibilityHandler();
+  const edvm = new EndDateVisibilityHandler();
+
+  cevm.initializePage();
   edvm.initializePage();
 });
