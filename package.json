@@ -1,6 +1,6 @@
 {
   "name": "blog-post--wagtailadmin-field-visibility-toggle",
-  "version": "2024.03.09",
+  "version": "2024.03.17",
   "description": "Conditional Display of Fields in Wagtail Admin -- an example Wagtail application to illustrate the concept",
   "scripts": {
     "release": "standard-version"
