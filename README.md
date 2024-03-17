@@ -1,6 +1,6 @@
 # Conditional Display of Fields in Wagtail Admin
 
-> An example Wagtail application to illustrate the concept
+> An example Wagtail application to illustrate the concept. See blog post [here](https://blog.victor.co.zm/conditional-display-of-fields-in-wagtail-admin)
 
 [![CI/CD](https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle/actions/workflows/main.yml/badge.svg)](https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle/actions/workflows/main.yml)
 
