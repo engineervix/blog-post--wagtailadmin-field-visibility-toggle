@@ -4,7 +4,7 @@ wagtail>=6.1,<6.2
 
 # Dev
 factory-boy>=3.3,<3.4
-Faker>=24.14,<24.15
+Faker>=25.9,<25.10
 
 # Changelog Generation
 bumpver==2023.1129
