@@ -4,7 +4,7 @@
 
 [![CI/CD](https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle/actions/workflows/main.yml/badge.svg)](https://github.com/engineervix/blog-post--wagtailadmin-field-visibility-toggle/actions/workflows/main.yml)
 
-[![python3](https://img.shields.io/badge/python-3.12-brightgreen.svg)](https://www.python.org/downloads/)
+[![python3](https://img.shields.io/badge/python-3.13-brightgreen.svg)](https://www.python.org/downloads/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -15,7 +15,7 @@
 
 ### First things first
 
-I recommend you test this with Python 3.12, because that's what I used for this particular project. However, it _should_ hopefully work with lower Python versions such us 3.10 and 3.11.
+I recommend you test this with Python ~~3.12~~ 3.13, because that's what I used for this particular project. However, it _should_ hopefully work with lower Python versions such us 3.12, 3.11 and 3.10.
 
 You can use [pyenv](https://github.com/pyenv/pyenv) to install multiple python versions on your machine. Once you have your Python installed, create a [**virtual environment**](https://realpython.com/python-virtual-environments-a-primer/) and install dependencies via `pip install -r requirements.txt`.
 
